@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Warning Page {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="alert alert-danger mt-5">
+        <h2>Warning!</h2>
+        <p>You must be registered and logged in to access this page.</p>
+        <p>Choose one of the following options:</p>
+        <div class="btn-group" role="group">
+            <a class="btn btn-success" href="{{ url_for('register') }}">Register</a>
+        </div>
+        or
+        <div class="btn-group" role="group">
+            <a class="btn btn-primary" href="{{ url_for('login') }}">Login</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} Upload Page {% endblock %}
+
+{% block body %}
+
+<div class="inner-page">
+    <div class="container">
+        {% if user %}
+            <h2 class="mt-5">Welcome, {{ user.login }}!</h2>
+        {% endif %}
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="alert alert-danger">
+              <ul>
+                {% for category, message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+            <div class="form-group py-2">
+                <label for="work_title">Work Title</label>
+                <input type="text" class="form-control py-2" id="work_title" name="work_title" placeholder="Enter work title" required>
+            </div>
+
+            <div class="form-group py-2">
+                <label for="work_description">Work Description</label>
+                <input type="text" class="form-control py-2" id="work_description" name="work_description" placeholder="Enter work description" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary my-2">Upload</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

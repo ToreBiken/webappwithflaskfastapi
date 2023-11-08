@@ -1,0 +1,39 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment-specific files
+.env
+.env.*
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Ignore database files and migrations (if using SQLAlchemy)
+db.sqlite
+alembic/versions
+alembic/versions/*.pyc
+alembic/versions/*.pyo
+
+# Ignore editor/IDE-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore system files that might be generated
+.DS_Store
+
+# Ignore logs and other runtime-generated files
+logs/
+*.log
+
+# Ignore local configuration files
+config.local.py
+
+# Ignore virtual environment files (assuming you're using venv or virtualenv)
+venv/
+env/

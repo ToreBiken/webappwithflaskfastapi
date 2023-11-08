@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Works Page {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>All Works</h1>
+    <ul class="list-group">
+        {% for work in data %}
+        <li class="list-group-item">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1 list-group-item-h5">{{ work['work_title'] }}</h5>
+                <small style="font-size: 22px;">{{ work['work_owner']['login'] }}</small>
+            </div>
+            <p class="mb-1">{{ work['work_description'] }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
